@@ -51,7 +51,7 @@ void finder_func(char *, char *, int, int);
 
 /*Stack operations*/
 stack_t *create_node(int n);
-void free_nodes(void);
+void free_nodez(void);
 void printr_stack(stack_t **, unsigned int);
 void push_to_stack(stack_t **, unsigned int);
 void add_to_queue(stack_t **, unsigned int);

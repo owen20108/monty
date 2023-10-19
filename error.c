@@ -42,7 +42,7 @@ void errorz(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_nodez();
 	exit(EXIT_FAILURE);
 }
 
@@ -83,7 +83,7 @@ void more_erroz(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_nodez();
 	exit(EXIT_FAILURE);
 }
 
@@ -111,6 +111,6 @@ void strng_erroz(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_nodez();
 	exit(EXIT_FAILURE);
 }
