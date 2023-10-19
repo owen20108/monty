@@ -11,7 +11,7 @@ void opn_fle(char *file_name)
 	FILE *fdr = fopen(file_name, "r");
 
 	if (file_name == NULL || fdr == NULL)
-		err(2, file_name);
+		errorz(2, file_name);
 
 	reader_fle(fdr);
 	fclose(fdr);
@@ -30,7 +30,7 @@ void reader_fle(FILE *fdr)
 	char *buffer = NULL;
 	size_t len = 0;
 
-	for (line_num = 1; getline(&buffer, &len, fd) != -1; line_num++)
+	for (line_num = 1; getline(&buffer, &len, fdr) != -1; line_num++)
 	{
 		format = analyz_line(buffer, line_num, format);
 	}
@@ -54,7 +54,7 @@ int analyz_line(char *buffer, int line_num, int format)
 	const char *delimtr = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		errorz(4);
 
 	opcode = strtok(buffer, delimtr);
 	if (opcode == NULL)
@@ -85,21 +85,21 @@ void finder_func(char *opcode, char *value, int ln, int format)
 	int flags;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
-		{"pop", pop_top},
-		{"nop", nop},
+		{"push", push_to_stack},
+		{"pall", printr_stack},
+		{"pint", prnt_top},
+		{"pop", pop_fun},
+		{"nop", nothng},
 		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
+		{"add", insrt_nodes},
+		{"sub", two_nodz},
+		{"div", divd_nodz},
 		{"mul", mul_nodes},
 		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
-		{"rotr", rotr},
+		{"pchar", printr_chr},
+		{"pstr", printr_strng},
+		{"rotl", sub_tb},
+		{"rotr", sub_bt},
 		{NULL, NULL}
 	};
 
@@ -115,7 +115,7 @@ void finder_func(char *opcode, char *value, int ln, int format)
 		}
 	}
 	if (flags == 1)
-		err(3, ln, opcode);
+		errorz(3, ln, opcode);
 }
 
 
@@ -143,11 +143,11 @@ void caller_func(op_func func, char *op, char *val, int ln, int format)
 			flags = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			errorz(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				errorz(5, ln);
 		}
 		node = create_node(atoi(val) * flags);
 		if (format == 0)

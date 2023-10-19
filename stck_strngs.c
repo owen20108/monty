@@ -10,11 +10,11 @@ void printr_chr(stack_t **stack, unsigned int line_num)
 	int asci;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(11, line_num);
+		strng_erroz(11, line_num);
 
 	asci = (*stack)->n;
 	if (asci < 0 || asci > 127)
-		string_err(10, line_num);
+		strng_erroz(10, line_num);
 	printf("%c\n", asci);
 }
 

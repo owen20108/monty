@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MONTY_H_
+#define MONTY_H_
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -76,9 +76,9 @@ void printr_strng(stack_t **, unsigned int);
 void sub_tb(stack_t **, unsigned int);
 
 /*Errorz h*/
-void errorz(int error_code, ...)
-void more_erroz(int error_code, ...)
-void strng_erroz(int error_code,...);
+void errorz(int error_code, ...);
+void more_erroz(int error_code, ...);
+void strng_erroz(int error_code, ...);
 void sub_bt(stack_t **, unsigned int);
 
 #endif

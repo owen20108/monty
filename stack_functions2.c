@@ -22,7 +22,7 @@ void swap_nodz(stack_t **stack, unsigned int line_number)
 	stack_t *tmprry;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "swap");
+		more_erroz(8, line_number, "swap");
 	tmprry = (*stack)->next;
 	(*stack)->next = tmprry->next;
 	if (tmprry->next != NULL)
@@ -43,7 +43,7 @@ void insrt_nodes(stack_t **stack, unsigned int line_number)
 	int sums;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "add");
+		more_erroz(8, line_number, "add");
 
 	(*stack) = (*stack)->next;
 	sums = (*stack)->n + (*stack)->prev->n;
@@ -64,7 +64,7 @@ void two_nodz(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, line_number, "sub");
+		more_erroz(8, line_number, "sub");
 
 
 	(*stack) = (*stack)->next;
@@ -85,10 +85,10 @@ void divd_nodz(stack_t **stack, unsigned int line_number)
 	int sums;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "div");
+		more_erroz(8, line_number, "div");
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		more_erroz(9, line_number);
 	(*stack) = (*stack)->next;
 	sums = (*stack)->n / (*stack)->prev->n;
 	(*stack)->n = sums;
