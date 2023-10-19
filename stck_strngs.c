@@ -47,7 +47,7 @@ void printr_strng(stack_t **stack, __attribute__((unused))unsigned int lnum)
 }
 
 /**
- * sub_tp - subtitute  first node of the stack to  bottom.
+ * sub_tb - subtitute  first node of the stack to  bottom.
  * @stack: Pointer for  top node of the stack.
  * @lnum: Interger show  line number of the opcode.
  */

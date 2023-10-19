@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err - Print exact error message  by their error code
+ * errorz - Print exact error message  by their error code
  * @error_code:  error codes are:
  * (1) => The user do not  file or more to program.
  * (2) => The file provide is not  file that can open or read.
