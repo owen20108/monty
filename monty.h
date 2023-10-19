@@ -79,6 +79,6 @@ void sub_tb(stack_t **, unsigned int);
 void errorz(int error_code, ...)
 void more_erroz(int error_code, ...)
 void strng_erroz(int error_code, ...);
-void rotr(stack_t **, unsigned int);
+void sub_bt(stack_t **, unsigned int);
 
 #endif
