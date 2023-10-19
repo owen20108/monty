@@ -61,13 +61,13 @@ void caller_func(op_func, char *, char *, int, int);
 void prnt_top(stack_t **, unsigned int);
 void pop_fun(stack_t **, unsigned int);
 void nothng(stack_t **, unsigned int);
-void swap_nodes(stack_t **, unsigned int);
+void swap_nodz(stack_t **, unsigned int);
 
 /*Math operations*/
 void insrt_nodes(stack_t **, unsigned int);
 void two_nodz(stack_t **, unsigned int);
 void divd_nodz(stack_t **, unsigned int);
-void mul_nodes(stack_t **, unsigned int);
+void mult_nodz(stack_t **, unsigned int);
 void mod_nodes(stack_t **, unsigned int);
 
 /*String operations*/
